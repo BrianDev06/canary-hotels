@@ -10,9 +10,58 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #d8b397;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  height: 150px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.encabezado {
+  width: 100%;
+  background-color: #E63743;
+}
+
+.secciones {
+  display: flex;
+  align-items: center; 
+  gap: 30px;
+  margin-right: 100px;
+  
+}
+
+.logo-completo {
+  display: flex;
+  align-items: center;    /* centra verticalmente */
+  gap: 2px;             /* espacio entre logo y texto */
+}
+
+.logo-completo img {
+  width: 200px;           /* controla el logo */
+  height: auto;
+}
+
+.logo-completo h1 {
+  white-space: nowrap;
+  margin: 0;             /* elimina margen por defecto */
+  line-height: 1;
+}
+
+.carrito {
+  width: 24px;       /* tamaño lógico */
+  height: 24px;      /* mantener proporción */
+}
+
+
+
+
+
