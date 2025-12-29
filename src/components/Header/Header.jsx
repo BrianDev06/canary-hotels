@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logo from "../assets/canary-hotels-logo-sin-fondo.png";
+import logo from "../../assets/canary-hotels-logo-sin-fondo.png";
 
 function Header() {
     return (

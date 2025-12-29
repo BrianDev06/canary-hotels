@@ -1,0 +1,27 @@
+.imagen-fondo {
+    height: calc(100vh - 150px);
+    background-image: url(../../assets/imagen-principal.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagen-fondo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2); /* oscuridad */
+    z-index: 0;
+}
+
+.imagen-fondo h2 {
+    position: relative;
+    color: white;
+    font-size: 3rem;
+    z-index: 1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
