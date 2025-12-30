@@ -1,0 +1,12 @@
+.seccionHoteles {
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;   /* más elegante */
+    margin: 0 auto;
+    padding: 0 32px;
+    margin-top: 3em;
+}
+
+.indexHoteles {
+    align-self: center;
+}
