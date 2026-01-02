@@ -1,0 +1,89 @@
+.card-container {
+    width: 100%;
+    height: 250px;
+    background-color: white;
+    border-radius: 25px;
+    display: flex;
+}
+
+.card-image {
+    max-width: 31.5rem;
+    height: auto;          /* controla el alto visual */
+    object-fit: cover;     /* mantiene proporción y recorta */
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+.informacionCard {
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 15px;
+    position: relative;
+}
+
+.price {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+.price span {
+    font-weight: bold;
+    font-size: 20px;
+    align-self: center;
+}
+
+.price button {
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.price button:hover {
+    background-color: #E63743;
+}
+
+h4 + p {
+    margin-top: 10px;
+}
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-fechas {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.error-fecha {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.mensaje-exito {
+    color: #15803d; /* Verde oscuro */
+    background-color: #dcfce7; /* Verde clarito fondo */
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #bbf7d0;
+}

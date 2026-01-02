@@ -41,4 +41,127 @@ ul {
 .carrito {
   width: 24px;       /* tamaño lógico */
   height: 24px;      /* mantener proporción */
+  cursor: pointer;
+}
+
+/* Contenedor del icono */
+.carrito-container {
+    position: relative; /* Clave para que el hijo absoluto se posicione respecto a esto */
+    cursor: pointer;
+}
+
+.icono-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Badge rojo con número */
+.carrito-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #000000;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Ventana desplegable (Dropdown) */
+.carrito-dropdown {
+    position: absolute;
+    top: 100%; /* Justo debajo del icono */
+    right: 0;
+    width: 300px;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    z-index: 50; /* Para que quede por encima del Hero */
+    color: #333;
+}
+
+.carrito-dropdown h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* Lista de reservas */
+.lista-items {
+    max-height: 300px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    padding: 0.5rem;
+    border-radius: 6px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.item-titulo {
+    font-weight: bold;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.item-fecha, .item-precio {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+
+.btn-eliminar:hover {
+    transform: scale(1.2);
+}
+
+.carrito-vacio {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+}
+
+.btn-pagar {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-pagar:hover {
+    background-color: #1d4ed8;
 }
