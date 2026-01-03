@@ -1,0 +1,42 @@
+.informacionCanarias {
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;   /* más elegante */
+    margin: 0 auto;
+    padding: 0 32px;
+    margin-top: 3em;
+}
+
+.explora {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.islas {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 2em;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.islas button {
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.islas button:hover {
+    background-color: #E63743;
+    color: white;
+}
+
+.islas button.activo {
+    background-color: #E63743;
+    color: white;
+}
