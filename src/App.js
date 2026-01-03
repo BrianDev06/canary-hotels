@@ -11,28 +11,26 @@ function App() {
   const [carrito, setCarrito] = useState([]);
 
   const agregarAlCarrito = (reserva) => {
-    setCarrito([...carrito, reserva]);
+    setCarrito((prev) => [...prev, reserva]);
   };
 
-  // NUEVO: Función para borrar un elemento específico por su índice
-  const eliminarDelCarrito = (indiceAEliminar) => {
-    const nuevoCarrito = carrito.filter((_, index) => index !== indiceAEliminar);
-    setCarrito(nuevoCarrito);
+  const eliminarDelCarrito = (index) => {
+    setCarrito((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
     <div>
       {/* CAMBIO: Pasamos el carrito entero y la función de borrar */}
-      <Header 
-        carrito={carrito} 
-        eliminarDelCarrito={eliminarDelCarrito} 
+      <Header
+        carrito={carrito}
+        eliminarDelCarrito={eliminarDelCarrito}
       />
       
       <Hero />
       <About />
       <Services agregarAlCarrito={agregarAlCarrito} />
       <Information />
-      <HotelCarousel />
+      <HotelCarousel agregarAlCarrito={agregarAlCarrito} /> 
     </div>
   );
 }

@@ -1,6 +1,6 @@
 .card-container {
     width: 100%;
-    height: 250px;
+    height: 275px;
     background-color: white;
     border-radius: 25px;
     display: flex;
@@ -18,7 +18,9 @@
     width: 100%;
     margin-top: 5px;
     margin-left: 15px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    
 }
 
 .informacionCard p {
@@ -28,9 +30,10 @@
 .price {
     display: flex;
     gap: 10px;
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-right: 25px;
+    margin-bottom: 20px;
 }
 
 .price span {

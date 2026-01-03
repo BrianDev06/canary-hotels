@@ -20,7 +20,7 @@ const HOTELES = [
 function Services({ agregarAlCarrito }) {
     return (
         <section>
-            <div className="seccionHoteles">
+            <div className="seccionHoteles content">
                 <button className="indexHoteles">Ver todos los alojamientos</button>
                 <div className='hoteles'>
                     {HOTELES.map(hotel => (
