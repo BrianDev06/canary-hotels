@@ -21,6 +21,10 @@
     position: relative;
 }
 
+.informacionCard p {
+    width: 29.5rem;
+}
+
 .price {
     display: flex;
     gap: 10px;

@@ -9,6 +9,17 @@
 
 .indexHoteles {
     align-self: center;
+    width: 50%;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.indexHoteles:hover {
+    background-color: #E63743;
 }
 
 .hoteles {
