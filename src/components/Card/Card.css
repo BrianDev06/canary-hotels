@@ -19,8 +19,7 @@
     margin-top: 5px;
     margin-left: 15px;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;   
 }
 
 .informacionCard p {
