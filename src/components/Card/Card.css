@@ -4,6 +4,7 @@
     background-color: white;
     border-radius: 25px;
     display: flex;
+    box-shadow: 2px 2px 5px #888;
 }
 
 .card-image {
