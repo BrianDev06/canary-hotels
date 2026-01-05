@@ -17,8 +17,8 @@ function Header({ carrito, eliminarDelCarrito }) {
                     <h1>Canary Island</h1>
                 </div>
                 <ul className='secciones'>
-                    <li><a href="#">Reserve</a></li>
-                    <li><a href="#">Explore</a></li>
+                    <li><a href="#reserve" className='learn-more'>Reserve</a></li>
+                    <li><a href="#explore" className='learn-more'>Explore</a></li>
                     
                     {/* Contenedor relativo para posicionar el dropdown */}
                     <li className="carrito-container"> 

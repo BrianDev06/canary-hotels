@@ -133,7 +133,7 @@ function HotelSections({ agregarAlCarrito }) {
   // ================= RENDER CARRUSEL =================
   const renderCarrusel = (titulo, hoteles, ref, verTodos) => (
     <>
-      <div className="section-header">
+      <div className="section-header" id='explore'>
         <h2>{titulo}</h2>
         <button className="view-all" onClick={verTodos}>Ver todos los hoteles</button>
       </div>

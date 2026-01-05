@@ -19,7 +19,7 @@ const HOTELES = [
 // 1. Recibimos agregarAlCarrito
 function Services({ agregarAlCarrito }) {
     return (
-        <section>
+        <section id='reserve'>
             <div className="seccionHoteles content">
                 <button className="indexHoteles">Ver todos los alojamientos</button>
                 <div className='hoteles'>
