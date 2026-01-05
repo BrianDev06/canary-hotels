@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Services from "./components/Services/Services";
 import Information from "./components/Information/Information";
 import HotelCarousel from "./components/HotelCarousel/HotelCarousel";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -31,6 +32,7 @@ function App() {
       <Services agregarAlCarrito={agregarAlCarrito} />
       <Information />
       <HotelCarousel agregarAlCarrito={agregarAlCarrito} /> 
+      <Footer />
     </div>
   );
 }
