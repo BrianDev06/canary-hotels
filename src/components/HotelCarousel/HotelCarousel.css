@@ -35,9 +35,11 @@
   overflow-x: hidden;
   overflow-y: hidden;
   padding-bottom: 1rem;
+  height: 475px;
 }
 
 .carousel-card {
+  position: relative;
   min-width: 260px;
   height: 400px;
   border-radius: 16px;
@@ -74,34 +76,37 @@
   font-size: 16px;
 }
 
-.hotelPrice span{
+.carousel-card span{
   margin-left: 5px;
   font-weight: bold;
 }
 
+.dropdown-wrapper {
+  position: relative;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 .comprarCarousel {
-  align-self: center;
-  display: flex;
   padding: 10px 25px;
   border-radius: 10px;
   border: none;
   background-color: black;
   color: white;
   cursor: pointer;
+
+  /* Para centrar texto dentro */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .comprarCarousel:hover {
-    background-color: #E63743;
-}
-
-.dropdown-wrapper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdown-wrapper {
-  position: relative;
+  background-color: #E63743;
 }
 
 .dropdown-fechas {
@@ -124,4 +129,59 @@
   border: none;
   padding: 10px 25px;
   border-radius: 10px;
+}
+
+.view-all {
+  margin: 10px auto;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: none;
+  background-color: #E63743;
+  color: white;
+  cursor: pointer;
+}
+
+.view-all:hover {
+  background-color: black;
+}
+
+.hotel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hotel-row {
+  height: 300px;
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+}
+
+.hotel-row img {
+  width: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.hotel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hotel-info h3 {
+  margin: 0;
+}
+
+.hotel-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.hotel-info .price {
+  font-weight: bold;
+  font-size: 16px;
 }

@@ -1,52 +1,39 @@
 import { useState, useRef, useEffect } from 'react';
 import './HotelCarousel.css';
-import imagenHotel1 from '../../assets/apartamento-pobla-farnals-playa-precioso.jpg';
-import imagenHotel2 from '../../assets/bancal-hotel-&-spa.jpg';
-import imagenHotel3 from '../../assets/shambhala-fuerteventura.jpg';
-import imagenHotel4 from '../../assets/hotel-cordial-marina-blanca.jpg';
-import imagenHotel5 from '../../assets/hotel-el-tejar-&-spa.jpg';
 
-const hotels = [
-  { id: 1, img: imagenHotel1, title: "Apartamento Pobla Farnals Playa Precioso", stars: "⭐⭐⭐", description: "Apartamento pobla farnals playa precioso se encuentra en Las Canteras, a solo 9 min a pie de Platja de Rafalell, y ofrece alojamiento frente a la playa con piscina de temporada al aire libre, jardín, salón de uso común y wifi gratis.", price: "100€ / noche" },
-  { id: 2, img: imagenHotel2, title: "Bancal Hotel & Spa", stars: "⭐⭐⭐⭐⭐", description: "Si decides alojarte en Bancal Hotel & Spa de San Sebastián de La Gomera, estarás a orillas del agua y a menos de diez minutos en coche de Puerto de San Sebastián de la Gomera y Playas de La Gomera. Además, este hotel spa se encuentra a 2,1 km de Playa Ávalo y a 3,7 km de Playa de Chigadá.", price: "200€ / noche" },
-  { id: 3, img: imagenHotel3, title: "Shambhala Fuerteventura", stars: "⭐⭐⭐⭐", description: "Alojamiento Elegante: Shambhala Fuerteventura en Parque Holandés ofrece una piscina con vistas impresionantes, una terraza solárium y un jardín exuberante. Los huéspedes pueden relajarse junto a la piscina o disfrutar del sol en la terraza. La propiedad cuenta con un bar y WiFi gratis, asegurando una estancia cómoda y conectada.", price: "167,99€ / noche" },
-  { id: 4, img: imagenHotel4, title: "Hotel Cordial Marina Blanca", stars: "⭐⭐⭐⭐", description: "Ofrece piscina al aire libre. El Hotel Cordial Marina Blanca ofrece alojamiento en Playa Blanca, a 16 km de Puerto del Carmen. Hay WiFi gratuita en todas las instalaciones.", price: "329,99€ / noche" },
-  { id: 5, img: imagenHotel5, title: "Hotel El Tejar & Spa", stars: "⭐⭐⭐⭐", description: "Ubicación Privilegiada: Situado a 25 km del Aeropuerto de Tenerife Sur, el hotel está cerca de atracciones como Golf del Sur (21 km) y Siam Park (23 km). Los huéspedes pueden disfrutar de vistas al mar, al jardín o a la montaña desde sus habitaciones.", price: "115€ / noche" },
-];
+import playa1 from '../../assets/apartamento-pobla-farnals-playa-precioso.jpg';
+import playa2 from '../../assets/bancal-hotel-&-spa.jpg';
+import playa3 from '../../assets/shambhala-fuerteventura.jpg';
+import playa4 from '../../assets/hotel-cordial-marina-blanca.jpg';
+import playa5 from '../../assets/hotel-el-tejar-&-spa.jpg';
 
-function HotelCarousel({ agregarAlCarrito }) {
-  const carouselRef = useRef(null);
-  const [puedeIzquierda, setPuedeIzquierda] = useState(false);
-  const [puedeDerecha, setPuedeDerecha] = useState(true);
+import campo1 from '../../assets/finca-malvasia.webp';
+import campo2 from '../../assets/bellamare.webp';
+import campo3 from '../../assets/malpais-trece.webp';
+import campo4 from '../../assets/villa-senorita.webp';
+import campo5 from '../../assets/hacienda-camino-de-la-cruzada.webp';
 
-  const actualizarFlechas = () => {
-  const carousel = carouselRef.current;
-  if (!carousel) return;
+function HotelSections({ agregarAlCarrito }) {
+  // ================= DATOS =================
+  const hotelesPlaya = [
+    { id: 1, img: playa1, title: "Apartamento Pobla Farnals Playa Precioso", description: "Apartamento pobla farnals playa precioso se encuentra en Las Canteras, a solo 9 min a pie de Platja de Rafalell, y ofrece alojamiento frente a la playa con piscina de temporada al aire libre, jardín, salón de uso común y wifi gratis.", price: "100€ / noche" },
+    { id: 2, img: playa2, title: "Bancal Hotel & Spa", description: "Si decides alojarte en Bancal Hotel & Spa de San Sebastián de La Gomera, estarás a orillas del agua y a menos de diez minutos en coche de Puerto de San Sebastián de la Gomera y Playas de La Gomera.", price: "200€ / noche" },
+    { id: 3, img: playa3, title: "Shambhala Fuerteventura", description: "Alojamiento elegante con piscina y terraza.", price: "167,99€ / noche" },
+    { id: 4, img: playa4, title: "Hotel Cordial Marina Blanca", description: "Piscina al aire libre y WiFi gratuita.", price: "329,99€ / noche" },
+    { id: 5, img: playa5, title: "Hotel El Tejar & Spa", description: "Vistas al mar y cerca de atracciones.", price: "115€ / noche" },
+  ];
 
-  setPuedeIzquierda(carousel.scrollLeft > 0);
-  setPuedeDerecha(
-    carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth
-    );
-  };
+  const hotelesCampo = [
+    { id: 101, img: campo1, title: "Finca Malvasia", description: "Rodeada de volcanes y viñedos.", price: "150€ / noche" },
+    { id: 102, img: campo2, title: "Bellamare", description: "Casa rural luminosa en Tenerife.", price: "375€ / noche" },
+    { id: 103, img: campo3, title: "Malpaís Trece", description: "Casa familiar con vistas al Atlántico.", price: "167,99€ / noche" },
+    { id: 104, img: campo4, title: "Villa Señorita", description: "Casa acogedora en Gran Canaria.", price: "229,99€ / noche" },
+    { id: 105, img: campo5, title: "Hacienda Camino De La Cruzada", description: "Refugio lujoso en Tenerife.", price: "175€ / noche" },
+  ];
 
-  const scrollDerecha = () => {
-    carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-  };
-
-  const scrollIzquierda = () => {
-    carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (!carousel) return;
-
-    actualizarFlechas();
-    carousel.addEventListener('scroll', actualizarFlechas);
-
-    return () => carousel.removeEventListener('scroll', actualizarFlechas);
-  }, []);
-
+  // ================= ESTADOS =================
+  const [verTodosPlaya, setVerTodosPlaya] = useState(false);
+  const [verTodosCampo, setVerTodosCampo] = useState(false);
 
   const [abiertoId, setAbiertoId] = useState(null);
   const [fecha, setFecha] = useState('');
@@ -54,8 +41,8 @@ function HotelCarousel({ agregarAlCarrito }) {
   const [errorFechaPasada, setErrorFechaPasada] = useState(false);
   const [mensajeExito, setMensajeExito] = useState(false);
 
+  // ================= HELPERS =================
   const minDateTime = () => new Date().toISOString().slice(0, 16);
-
   const limpiarErrores = () => {
     setErrorSinFecha(false);
     setErrorFechaPasada(false);
@@ -65,15 +52,8 @@ function HotelCarousel({ agregarAlCarrito }) {
   const confirmar = (hotel) => {
     limpiarErrores();
 
-    if (!fecha) {
-      setErrorSinFecha(true);
-      return;
-    }
-
-    if (new Date(fecha) < new Date()) {
-      setErrorFechaPasada(true);
-      return;
-    }
+    if (!fecha) return setErrorSinFecha(true);
+    if (new Date(fecha) < new Date()) return setErrorFechaPasada(true);
 
     agregarAlCarrito({
       titulo: hotel.title,
@@ -90,89 +70,137 @@ function HotelCarousel({ agregarAlCarrito }) {
     }, 2000);
   };
 
-  return (
-    <section className="hotel-section content">
+  // ================= CARRUSEL REFS =================
+  const playaRef = useRef(null);
+  const campoRef = useRef(null);
+  const scroll = (ref, cantidad) => ref.current.scrollBy({ left: cantidad, behavior: 'smooth' });
+
+  // ================= RENDER LISTA =================
+  const renderLista = (hoteles, volver) => (
+    <>
+      <button className="view-all" onClick={volver}>
+        ← Volver atrás
+      </button>
+
+      <div className="hotel-list">
+        {hoteles.map((hotel) => (
+          <div className="hotel-row" key={hotel.id}>
+            <img src={hotel.img} alt={hotel.title} />
+            <div className="hotel-info">
+              <h3>{hotel.title}</h3>
+              <p>{hotel.description}</p>
+              <span className="price">{hotel.price}</span>
+
+              <div className="dropdown-wrapper">
+                <button
+                  className="comprarCarousel"
+                  onClick={() => {
+                    setAbiertoId(abiertoId === hotel.id ? null : hotel.id);
+                    limpiarErrores();
+                  }}
+                >
+                  Añadir al carrito
+                </button>
+
+                {abiertoId === hotel.id && (
+                  <div className="dropdown-fechas">
+                    <input
+                      type="datetime-local"
+                      min={minDateTime()}
+                      value={fecha}
+                      onChange={(e) => setFecha(e.target.value)}
+                    />
+                    {!mensajeExito ? (
+                      <button className="confirmar" onClick={() => confirmar(hotel)}>
+                        Confirmar
+                      </button>
+                    ) : (
+                      <p className="mensaje-exito">✅ La reserva se ha añadido con éxito</p>
+                    )}
+                    {errorSinFecha && <p className="error-fecha">Selecciona una fecha</p>}
+                    {errorFechaPasada && <p className="error-fecha">Fecha incorrecta</p>}
+                  </div>
+                )}
+              </div>
+
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+
+  // ================= RENDER CARRUSEL =================
+  const renderCarrusel = (titulo, hoteles, ref, verTodos) => (
+    <>
       <div className="section-header">
-        <h2>Hoteles cerca de la playa</h2>
-        <button className="view-all">Ver todos los hoteles</button>
+        <h2>{titulo}</h2>
+        <button className="view-all" onClick={verTodos}>Ver todos los hoteles</button>
       </div>
 
       <div className="carousel-container">
-        {puedeIzquierda && (
-          <button className="flecha izquierda" onClick={scrollIzquierda}>
-            ‹
-          </button>
-        )}
-
-        <div className="carousel" ref={carouselRef}>
-          {hotels.map((hotel) => (
+        <button className="flecha izquierda" onClick={() => scroll(ref, -300)}>‹</button>
+        <div className="carousel" ref={ref}>
+          {hoteles.map((hotel) => (
             <div className="carousel-card" key={hotel.id}>
               <img src={hotel.img} alt={hotel.title} />
               <h3>{hotel.title}</h3>
+              <span className="price">{hotel.price}</span>
 
-              <div className="hotelPrice">
-                <span>{hotel.price}</span>
+              <div className="dropdown-wrapper">
+                <button
+                  className="comprarCarousel"
+                  onClick={() => {
+                    setAbiertoId(abiertoId === hotel.id ? null : hotel.id);
+                    limpiarErrores();
+                  }}
+                >
+                  Añadir al carrito
+                </button>
 
-                <div className="dropdown-wrapper">
-                  <button
-                    className="comprarCarousel"
-                    onClick={() => {
-                      setAbiertoId(abiertoId === hotel.id ? null : hotel.id);
-                      limpiarErrores();
-                    }}
-                  >
-                    Añadir al carrito
-                  </button>
-
-                  {abiertoId === hotel.id && (
-                    <div className="dropdown-fechas">
-                      <input
-                        type="datetime-local"
-                        min={minDateTime()}
-                        value={fecha}
-                        onChange={(e) => {
-                          setFecha(e.target.value);
-                          limpiarErrores();
-                        }}
-                      />
-
-                      {!mensajeExito ? (
-                        <button className='confirmar' onClick={() => confirmar(hotel)}>
-                          Confirmar
-                        </button>
-                      ) : (
-                        <p className="mensaje-exito">
-                          ✅ La reserva se ha añadido con éxito
-                        </p>
-                      )}
-
-                      {errorSinFecha && (
-                        <p className="error-fecha">
-                          No puedes reservar si no seleccionas una fecha
-                        </p>
-                      )}
-
-                      {errorFechaPasada && (
-                        <p className="error-fecha">
-                          No puedes reservar en una fecha pasada
-                        </p>
-                      )}
-                    </div>
-                  )}
-                </div>
+                {abiertoId === hotel.id && (
+                  <div className="dropdown-fechas">
+                    <input
+                      type="datetime-local"
+                      min={minDateTime()}
+                      value={fecha}
+                      onChange={(e) => setFecha(e.target.value)}
+                    />
+                    {!mensajeExito ? (
+                      <button className="confirmar" onClick={() => confirmar(hotel)}>
+                        Confirmar
+                      </button>
+                    ) : (
+                      <p className="mensaje-exito">✅ La reserva se ha añadido con éxito</p>
+                    )}
+                    {errorSinFecha && <p className="error-fecha">Selecciona una fecha</p>}
+                    {errorFechaPasada && <p className="error-fecha">Fecha incorrecta</p>}
+                  </div>
+                )}
               </div>
 
             </div>
           ))}
         </div>
-        {puedeDerecha && (
-          <button className="flecha derecha" onClick={scrollDerecha}>
-            ›
-          </button>
-        )}
+        <button className="flecha derecha" onClick={() => scroll(ref, 300)}>›</button>
       </div>
+    </>
+  );
+
+  // ================= JSX FINAL =================
+  return (
+    <section className="hotel-section content">
+      {!verTodosPlaya
+        ? renderCarrusel("Hoteles cerca de la playa", hotelesPlaya, playaRef, () => setVerTodosPlaya(true))
+        : renderLista(hotelesPlaya, () => setVerTodosPlaya(false))
+      }
+
+      {!verTodosCampo
+        ? renderCarrusel("Hoteles cerca del campo", hotelesCampo, campoRef, () => setVerTodosCampo(true))
+        : renderLista(hotelesCampo, () => setVerTodosCampo(false))
+      }
     </section>
   );
 }
 
-export default HotelCarousel;
+export default HotelSections;

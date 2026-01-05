@@ -13,13 +13,13 @@
     padding: 10px 25px;
     border-radius: 10px;
     border: none;
-    background-color: black;
+    background-color: #E63743;
     color: white;
     cursor: pointer;
 }
 
 .indexHoteles:hover {
-    background-color: #E63743;
+    background-color: black;
 }
 
 .hoteles {
