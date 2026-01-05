@@ -36,13 +36,24 @@ ul {
   white-space: nowrap;
   margin: 0;             /* elimina margen por defecto */
   line-height: 1;
+  color: white;
+  text-shadow: 2px 2px 4px #302e2e;
 }
 
-.carrito {
-  width: 24px;       /* tamaño lógico */
-  height: 24px;      /* mantener proporción */
-  cursor: pointer;
+.carrito-svg {
+  color: white; /* Cambia el color de stroke a blanco */
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.6)); /* Sombra suave */
+  width: 28px; /* Ajusta tamaño si quieres */
+  height: 28px;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
+
+/* Efecto hover opcional para resaltar */
+.carrito-svg:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.8));
+}
+
 
 /* Contenedor del icono */
 .carrito-container {
